@@ -60,7 +60,7 @@ public class LL1 {
 
 	public void algorithm() {
 		T();
-		for (int i = 0; i < temp_tokens.size() / 2; i++) {
+		for (int i = 0; i < temp_tokens.size()*2; i++) {
 			E();
 			EP();
 			if (temp_tokens.equals(TARGET_ARRAY)) {
@@ -75,7 +75,7 @@ public class LL1 {
 	}
 
 	public void printTokens() {
-		System.out.println(tokens);
+		System.out.println(temp_tokens);
 	}
 
 	public static void main(String[] args) {
@@ -84,7 +84,9 @@ public class LL1 {
 			System.exit(1);
 		}
 		String input = args[0];
+		
 		input.replaceAll("\\s+","");
+		System.out.println(input);
 		LL1 parse = new LL1(input);
 		parse.algorithm();
 	}
